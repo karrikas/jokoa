@@ -1,0 +1,12 @@
+{
+  "name": "jokoa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "php -S localhost:8888"
+  },
+  "author": "",
+  "license": "ISC"
+}
