@@ -12,16 +12,18 @@ var game = new Phaser.Game(config);
 
 function create ()
 {
-    //  Using the Scene Data Plugin we can store data on a Scene level
-    this.data.set('lives', 3);
-    this.data.set('level', 5);
-    this.data.set('score', 2000);
+    var r1 = this.add.rectangle(200, 200, 148, 148, 0x6666ff);
+    const helloButton = this.add.text(100, 100, 'Hello Phaser!', {
+      fontSize: '36px',
+      color: '#f00',
+      fill: '#0f0'
+    });
+    helloButton.setInteractive();
+        helloButton.on('pointerover', () => { console.log('pointerover'); });
 
-    var text = this.add.text(100, 100, '', { font: '64px Courier', fill: '#00ff00' });
+    r1.setInteractive();
+    r1.on('pointerover', () => {
+      console.log("BBB");
+    })
 
-    text.setText([
-        'Level: ' + this.data.get('level'),
-        'Lives: ' + this.data.get('lives'),
-        'Score: ' + this.data.get('score')
-    ]);
 }

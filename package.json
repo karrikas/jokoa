@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "php -S localhost:8888"
+    "serve": "php -S localhost:8888",
+    "watch": "sass --watch main.scss main.css"
   },
   "author": "",
   "license": "ISC"

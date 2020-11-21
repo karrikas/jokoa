@@ -1,0 +1,17 @@
+#pantaila {
+  max-width: 500px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content {
+    width: 100%;
+  }
+  .galdera {
+    text-align: center;
+    font-size: 80px;
+    padding-bottom: 50px;
+
+  }
+}
