@@ -34,14 +34,23 @@ function wsSend(info) {
 }
 
 function addConnection() {
-  console.log('addConnection');
-  config.conn = new WebSocket('ws://localhost:8080');
-  config.conn.onopen = function(e) {
-      console.log("Connection established!");
-  };
+  let ws = new Promise((resolve) => {
+    config.conn = new WebSocket('ws://localhost:8080');
+    config.conn.onopen = function(e) {
+        console.log("Connection established!");
+        resolve(true);
+    };
 
-  config.conn.onmessage = function(e) {
-      console.log(e.data);
-  };
+    config.conn.onmessage = function(e) {
+        console.log(e.data);
+    };
+  });
 
+  ws.then(() => {
+    var js = {action: 'SetName', data: {name: 'my name'}};
+    wsSend(JSON.stringify(js));
+
+    var js = {action: 'RoonCreate', data: {room: 'XYUZ'}};
+    wsSend(JSON.stringify(js));
+  })
 }
